@@ -1,0 +1,726 @@
+/*
+ * Author       : jovitha.j.2024.cse_rajala528
+ * Generated on : 10-Nov-2026 11:04:17
+ * Version      : 1.0
+ */
+ application "Student Admission Enquiry form"
+ {
+ 	date format = "dd-MMM-yyyy"
+ 	time zone = "Asia/Kolkata"
+ 	time format = "24-hr"
+
+ 	forms
+	{
+		form student_admission_enquiry_form
+		{
+			displayname = "student admission enquiry form"
+			success message = "Student Admission Enquiry Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Name
+			(
+    			type = name
+     			prefix
+     			(
+	     			 type = prefix
+	     			 displayname ="Prefix"
+	     			 visibility = false
+	     			 value = {"Mr.","Mrs.","Ms."}
+     			) 
+     			first_name
+     			(
+	     			 type = first_name
+	     			 displayname ="First Name"
+     			) 
+     			last_name
+     			(
+	     			 type = last_name
+	     			 displayname ="Last Name"
+     			) 
+     			suffix
+     			(
+	     			 type = suffix
+	     			 displayname ="Suffix"
+	     			 visibility = false
+     			) 
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Email
+			(
+    			type = email
+				maxchar = 80
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Address
+			(
+    			type = address
+     			capture_coordinates = true
+     			adjust_using_map = false
+     			address_line_1
+     			(
+	     			  type = address_line_1
+	     			  displayname = "Address Line 1"
+     			) 
+     			address_line_2
+     			(
+	     			  type = address_line_2
+	     			  displayname = "Address Line 2"
+     			) 
+     			district_city
+     			(
+	     			  type = district_city
+	     			  displayname = "City / District"
+     			) 
+     			state_province
+     			(
+	     			  type = state_province
+	     			  displayname = "State / Province"
+     			) 
+     			postal_Code
+     			(
+	     			  type = postal_Code
+	     			  displayname = "Postal Code"
+     			) 
+     			country
+     			(
+	     			  type = country
+	     			  displayname = "Country"
+     			) 
+     			latitude
+     			(
+	     			  type = latitude
+	     			  displayname = "latitude"
+	     			 visibility = false
+     			) 
+     			longitude
+     			(
+	     			  type = longitude
+	     			  displayname = "longitude"
+	     			 visibility = false
+     			) 
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Phone_Number
+			(
+    			type = phonenumber
+				displayname = "Phone"
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			contact_no
+			(
+    			type = text
+				displayname = "contact  no."
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			remarks
+			(
+    			type = textarea
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			th
+			(
+				type = number
+				displayname = "12th %"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			DOB
+			(
+    			type = date
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Preferred_counselling_time
+			(
+    			type = time
+				displayname = "Preferred counselling time"
+				timedisplayoptions = "hh:mm:ss" 
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			preferred_course
+			(
+				type = picklist
+				displayname = "preferred course"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			gender
+			(
+				type = radiobuttons
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			area_of_interest
+			(
+				type = list	
+				displayname = "area of interest"
+				values = {"robotics","coding","sports"}
+				height = 60px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			terms_agreement
+			(
+				type = checkboxes	
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			hostel_accomodation
+			(
+    			type = checkbox
+				displayname = "hostel accomodation"
+				initial value = false
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			guidelines
+			(
+    			type = richtext
+				height = 200px
+				toolbar = enable
+				[
+					style, font-color, background-color, link, bullets-and-numbering, 
+					font-size : {1, 2, 3, 4, 5, 6, 7}
+				]
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			achievement_url
+			(
+    			type = url
+				displayname = "achievement url"
+				enable  linkname
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			student_photo
+			(
+    			type = image
+				displayname = "student photo"
+				source  = file
+				aspect ratio = original
+				camera = primary
+				show gallery = true
+				switch camera = true
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			scholarship_eligibility
+			(
+    			type = percentage
+				displayname = "scholarship eligibility %"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			fee_paid
+			(
+				displayname = "fee paid"
+				type = INR
+				format = commadotindian
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			entance_exam_score
+			(
+				type = decimal
+				displayname = "entance exam score"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			enquiry_submitted_on
+			(
+    			type = datetime
+				displayname = "enquiry submitted on"
+				timedisplayoptions = "hh:mm:ss"
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Section1
+			(
+				type = section
+				displayname = "Section"
+				visibility = true
+	 			row = 2
+	 			column = 0   
+				width = medium
+			)
+			school_name
+			(
+    			type = text
+				displayname = "school name"
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			sibling_detaoils
+			(
+				type = grid
+				displayname = "sibling detaoils"
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Section2
+			(
+				type = section
+				displayname = "Section"
+				visibility = true
+	 			row = 4
+	 			column = 0   
+				width = medium
+			)
+			parent_digital_signature
+			(
+    			type = signature
+				displayname = "parent digital signature"
+	 			row = 4
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			marksheet
+			(
+    			type = upload file
+				browse = local_drive
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+			purpose_audio
+			(
+     			type = audio
+				displayname = "purpose audio"
+    			duration=60
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+			self_intro_video
+			(
+    			type = video
+				displayname = "self intro video"
+    			duration=30
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+			enquiry_id
+			(
+    			type = autonumber
+				displayname = "enquiry id"
+				start index = 1
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+	}
+	reports
+	{
+		default list All_Student_Admission_Enquiries
+		{
+			displayName = "All Student Admission Enquiries"
+			show all rows from student_admission_enquiry_form    
+			(
+				Name 
+				Email
+				Address 
+	 			(
+	      			enable = Link_to_Map,Show_As_Text
+	 			)
+				Phone_Number as "Phone"
+				(
+					displayformat = plainnumber 
+				)
+				contact_no as "contact  no."
+				remarks
+				th as "12th %"
+				DOB
+				Preferred_counselling_time as "Preferred counselling time"
+				preferred_course as "preferred course"
+				gender
+				area_of_interest as "area of interest"
+				terms_agreement
+				hostel_accomodation as "hostel accomodation"
+				guidelines
+				achievement_url as "achievement url"
+				student_photo as "student photo"
+				scholarship_eligibility as "scholarship eligibility %"
+				fee_paid as "fee paid"
+				entance_exam_score as "entance exam score"
+				enquiry_submitted_on as "enquiry submitted on"
+				school_name as "school name"
+				parent_digital_signature as "parent digital signature"
+				marksheet
+				purpose_audio as "purpose audio"
+				self_intro_video as "self intro video"
+				enquiry_id as "enquiry id"
+			)
+		}
+	}
+
+
+
+
+	share_settings
+	{
+			"Read"
+			{
+				name = "Read"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have read permission for all components\n"
+			}
+			"Write"
+			{
+				name = "Write"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have write permission for all components\n"
+			}
+			"Developer"
+			{
+				name = "Developer"
+				type = Developer
+				permissions = {Chat:false, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "Developer Profile\n"
+			}
+			"Administrator"
+			{
+				name = "Administrator"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have all the permissions.\n"
+			}
+			"Customer"
+			{
+				name = "Customer"
+				type = Customer_Portal
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This is the default profile having only add and view permission.\n"
+			}
+			roles
+			{
+				"CEO"
+				{
+					description = "User belonging to this role can access data of all other users."
+				}
+			}
+	}
+
+	customize
+	{
+		icon
+		{
+			text = "SAE"
+			background color = "theme"
+			foreground color = "#ffffff"
+		}
+	}
+
+	web
+	{
+		forms
+		{
+			form student_admission_enquiry_form
+			{
+				label placement = left
+			}
+		}
+		reports
+		{
+			report All_Student_Admission_Enquiries
+			{
+				quickview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								Name
+								Email
+								Address
+								Phone_Number as "Phone"
+								contact_no as "contact  no."
+								remarks
+								th as "12th %"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+							)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+						)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+						datablock1
+						(
+							fields
+							(
+								Name
+								Email
+								Address
+								Phone_Number as "Phone"
+								contact_no as "contact  no."
+								remarks
+								th as "12th %"
+								DOB
+								Preferred_counselling_time as "Preferred counselling time"
+								preferred_course as "preferred course"
+								gender
+								area_of_interest as "area of interest"
+								terms_agreement
+								hostel_accomodation as "hostel accomodation"
+								guidelines
+								achievement_url as "achievement url"
+								student_photo as "student photo"
+								scholarship_eligibility as "scholarship eligibility %"
+								fee_paid as "fee paid"
+								entance_exam_score as "entance exam score"
+								enquiry_submitted_on as "enquiry submitted on"
+								school_name as "school name"
+								parent_digital_signature as "parent digital signature"
+								marksheet
+								purpose_audio as "purpose audio"
+								self_intro_video as "self intro video"
+								enquiry_id as "enquiry id"
+							)
+						)
+					)
+						menu
+						(
+							header
+							(
+								Edit 
+								Duplicate 
+								Delete 
+							)
+						)
+				)
+			}
+		}
+		menu
+		{
+			space Space
+			{
+				displayname = "Space"
+				icon = "objects-spaceship"
+
+				section Student_Admission_Enquiries
+				{
+					displayname = "Student Admission Enquiries"
+					icon = "education-pencil-47"
+					form  student_admission_enquiry_form
+					{
+						icon = "education-pencil-47"
+					}
+					report All_Student_Admission_Enquiries
+					{
+						icon = "tech-desktop"
+					}
+				}
+				section ZC_App_Preferences
+				{
+					displayname = "App Preferences"
+					icon = "design-app"
+					systemcomponent
+					{
+						type = localization
+						displayname = "Language Selection"
+						icon = "education-language"
+					}
+					systemcomponent
+					{
+						type = connection
+						displayname = "Integrations"
+						icon = "tech-2-connection"
+					}
+				}
+				section ZC_Approvals
+				{
+					displayname = "Approvals"
+					icon = "ui-2-hourglass"
+					systemcomponent
+					{
+						type = approval
+						approval status = pending
+						displayname = "Pending Tasks"
+						icon = "ui-2-hourglass"
+					}
+					systemcomponent
+					{
+						type = approval
+						approval status = completed
+						displayname = "Completed Tasks"
+						icon = "design-todo"
+					}
+				}
+				section SharedAnalytics_Section
+				{
+					type = shared_user_report_section
+					displayname = "Reports"
+					icon = "business-chart-bar-33"
+				}
+			}
+			preference
+			{
+				icon
+				{
+					style = outline
+				}
+			}
+		}
+		customize
+		{
+			font = "lato"
+			color options
+			{
+				color = "11"
+			}
+			logo
+			{
+				preference = "app_icon"
+				placement = "left"
+			}
+		}
+	}
+	phone
+	{
+		customize
+		{
+			layout = twocolumn
+			font = "default"
+			style = "1"
+			color options
+			{
+				color = chryslerpurple
+			}
+			logo
+			{
+				preference = "none"
+			}
+		}
+	}
+	tablet
+	{
+		customize
+		{
+			layout = slidingpane
+			font = "default"
+			style = "1"
+			color options
+			{
+				color = darkgrey
+			}
+			logo
+			{
+				preference = "none"
+			}
+		}
+	}
+	translation
+{
+{"Language_Settings":{"LANGAGUE_WITH_LOGIN":"browser"}}
+}
+}
